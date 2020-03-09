@@ -16,7 +16,7 @@ public class VarsMain {
 
 	public static void main(String[] args) {
 		String name = "David";
-		int age = 2020 - 1976;
+		int age = calculateAge(1976);
 		System.out.println(name + " ist " + age + " alt.");
 	}
 }
