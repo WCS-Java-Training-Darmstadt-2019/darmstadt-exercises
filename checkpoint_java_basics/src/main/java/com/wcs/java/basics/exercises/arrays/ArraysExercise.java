@@ -10,8 +10,11 @@ public class ArraysExercise {
 	
 	
 	public static void main(String[] args) {
-		
-		// die methode createArray soll ein string array mit den angegeben werten anlegen
+		// Diese Klasse kompiliert nicht. Bitte schreibe den Code so, dass sie kompiliert.
+		// Erstelle die Methode createArray(String wert, int size) die ein Array in der angegebenen Grösse erstellt
+		// und jedes Element wird dem wert gefüllt
+		// dh. in diesem Beispiel soll ein arry mit 10 element angelegt werden, 
+		// Ergebnis wäre = {"David","David","David","David","David","David","David","David","David","David"}
 		
 		string_array = createArray("David", 10);
 		
