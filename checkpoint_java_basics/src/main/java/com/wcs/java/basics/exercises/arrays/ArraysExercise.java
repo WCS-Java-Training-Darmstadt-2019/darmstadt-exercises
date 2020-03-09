@@ -1,5 +1,7 @@
 package com.wcs.java.basics.exercises.arrays;
 
+import com.sun.tools.javac.util.ArrayUtils;
+
 
 /**
  * 
@@ -8,20 +10,40 @@ package com.wcs.java.basics.exercises.arrays;
  */
 public class ArraysExercise {
 	
+
+
 	
 	public static void main(String[] args) {
 		
 		// die methode createArray soll ein string array mit den angegeben werten anlegen
 		
-		string_array = createArray("David", 10);
 		
+		String [] names = new String [10];
+						
 		// iteriere über das array und gebe jeden Wert in der console aus.
+
+		for (String s: names){
+		System.out.println(s);				
+		}
 		
-		// erstelle eine methode die ein 2 dimensionales array (hier grid genannt) erstellt und jeden wert mit dem übergabe wert füllt.
+
+	
+		// erstelle eine methode die ein 2 dimensional;es array (hier grid genannt) erstellt und jeden wert mit dem übergabe wert füllt.
+		int [][] grid  = new int [2][10];
 		
-		grid = createGrid(2,10,"x");
+		//grid = createGrid(2,10,"x");
 		
+		
+			
 		// iteriere über jede zelle des grids und gebe spalte und zeile aus sowie den inhalt
+			
+		for (int i=0; i<grid.length; i++) {
+			for(int k=0; k <grid[i].length; k++) {
+				System.out.println(grid[i][k]);
+				
+			}
+		}
+		
 		// x:0,y=0,value=x
 		// x:1,y=0,value=x
 		// etc.
@@ -33,7 +55,7 @@ public class ArraysExercise {
 		// |x|x|x|x|x|x|x|x|x|x|
 		// |x|x|x|x|x|x|x|x|x|x|
 		// ---------------------
-		String gridAsString = gridAsString(grid):
+		String gridAsString = gridAsString(grid);
 		System.out.println(gridAsString);
 		
 	}

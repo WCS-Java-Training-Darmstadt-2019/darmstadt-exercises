@@ -10,16 +10,22 @@ public class StarTrek {
         BufferedReader reader = new BufferedReader(
               new InputStreamReader(System.in));
  
-        System.out.println("Welchen Teil von Startrek möchten sie schauen? Bitte geben sie die Nr ein.");
+        System.out.println("Welchen Teil von StarTrek möchten sie anschauen? Bitte geben sie die Nr ein.");
         
         String eingabe = reader.readLine();
-        int filmNo = //TODO;
+        int filmNo = Integer.parseInt(eingabe);
         
+        System.out.println ("FilmNo: " + filmNo); 
         
+        if (filmNo %2==0) {
+        	System.out.println ("Gute Wahl - Film unbedingt anschauen!"); 
+        }else {
+        	System.out.println ("Film besser nicht anschauen!"); 
+        }
+                 		
 	}
 	
-	
-        
-        
-
 }
+	
+	
+	
