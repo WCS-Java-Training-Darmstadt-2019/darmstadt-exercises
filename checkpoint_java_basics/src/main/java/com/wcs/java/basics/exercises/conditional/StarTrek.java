@@ -13,7 +13,7 @@ public class StarTrek {
         System.out.println("Welchen Teil von Startrek möchten sie schauen? Bitte geben sie die Nr ein.");
         
         String eingabe = reader.readLine();
-        int filmNo = Integer.parseInt(eingabe);//TODO;
+        int filmNo = Integer.parseInt(eingabe);
         
         if (filmNo % 2 == 0) {
         	System.out.println("Film Nummer " + filmNo + " ist eine gute Wahl. Viel Spass beim gucken.");       
