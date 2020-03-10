@@ -16,28 +16,26 @@ public static void main(String[] args) {
 	for (String s: array){
 		System.out.println(s);				
 		}
-	}
 
-	char [][]array = createGrid('x', 2, 10);
+
+	char [][]array_2 = createGrid('x', 2, 10);
 	
-//	for (char t: array){
-//		System.out.println(t);				
-//		}
-//	
-//	
-//	System.out.println(grid[i][k]);
 	
-
-
+	for (int m = 0; m < array_2.length; m++) {
+	      for(int n = 0; n < array_2[m].length; n++) {
+	        System.out.println(array_2[m][n]);
+	      }
+	    }
+	
+}
 	
 public static String [] createArray (String name, int number) {
 		
 		String [] names = new String [number];
 			
 		for (int i = 0; i < names.length; i++){
-		names [i] = name;
-		System.out.println(Arrays.toString(names));
-		
+			names [i] = name;
+			System.out.println(Arrays.toString(names));
 		}			
 		return names;
 		}
@@ -52,9 +50,13 @@ public static char [][] createGrid(char b, int row, int column) {
 			for(int k=0; k <grid[i].length; k++) {
 			grid [i][k] = b;
 			
+			}
 		}
-	}
 		return grid;
+		
+}
+}
+
 	
 		
 //	// erstelle eine methode die ein 2 dimensional;es array (hier grid genannt) erstellt und jeden wert mit dem übergabe wert füllt.
@@ -84,9 +86,7 @@ public static char [][] createGrid(char b, int row, int column) {
 //	String gridAsString = gridAsString(grid);
 //	System.out.println(gridAsString);
 //	
-}
 
-}
 
 
 
