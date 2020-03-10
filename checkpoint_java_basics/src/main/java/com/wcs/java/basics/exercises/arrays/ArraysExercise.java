@@ -1,43 +1,59 @@
 package com.wcs.java.basics.exercises.arrays;
 
-
 /**
  * 
  * @author dbe
  *
  */
 public class ArraysExercise {
-	
-	
-	public static void main(String[] args) {
-		
-		// die methode createArray soll ein string array mit den angegeben werten anlegen
-		
-		string_array = createArray("David", 10);
-		
-		// iteriere über das array und gebe jeden Wert in der console aus.
-		
-		// erstelle eine methode die ein 2 dimensionales array (hier grid genannt) erstellt und jeden wert mit dem übergabe wert füllt.
-		
-		grid = createGrid(2,10,"x");
-		
-		// iteriere über jede zelle des grids und gebe spalte und zeile aus sowie den inhalt
-		// x:0,y=0,value=x
-		// x:1,y=0,value=x
-		// etc.
-		
-		// gebe es als einen string aus
-		// bsp = grid mit 10 spalten und 3 zeilen
-		// ---------------------
-		// |x|x|x|x|x|x|x|x|x|x|
-		// |x|x|x|x|x|x|x|x|x|x|
-		// |x|x|x|x|x|x|x|x|x|x|
-		// ---------------------
-		String gridAsString = gridAsString(grid):
-		System.out.println(gridAsString);
-		
-	}
-	
-	
 
+	public static void main(String[] args) {
+
+		createArray("David", 10);
+		String[][] xy = createGrid(3, 10, "x");
+		String grid = gridAsString(xy);
+		System.out.println(grid);
+	}
+
+	public static void createArray(String name, int size) {
+		String[] davidArray = new String[size];
+		for (int i = 0; i < davidArray.length; i++) {
+			davidArray[i] = name;
+			System.out.println(davidArray[i]);
+		}
+	}
+
+	public static String[][] createGrid(int rows, int columns, String fillChar) {
+		String[][] grid = new String[rows][columns];
+		for (int r = 0; r < grid.length; r++) {
+			for (int c = 0; c < grid[r].length; c++) {
+				grid[r][c] = fillChar;
+				System.out.println("x: " + c + ", y: " + r + ", " + "value: " + grid[r][c]);
+			}
+		}
+		return grid;
+	}
+
+	public static String gridAsString(String[][] grid) {
+		String result = "";
+		// Header mit "-"
+		result = createHeaderFooterLine(grid) + "\n";
+		// Body mit "x"
+		for (int r = 0; r < grid.length; r++) {
+			for (int c = 0; c < grid[r].length; c++) {
+				result += "|" + grid[r][c];
+			}
+			result += "|\n";
+		}
+		// Footer mit "-"
+		return result += createHeaderFooterLine(grid);
+	}
+
+	private static String createHeaderFooterLine(String[][] grid) {
+		String result = "";
+		for (int i = 0; i < (grid[0].length * 2) + 1; i++) {
+			result += "-";
+		}
+		return result;
+	}
 }
