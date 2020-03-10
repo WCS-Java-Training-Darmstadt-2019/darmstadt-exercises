@@ -16,10 +16,13 @@ public class StarTrek {
         int filmNo = Integer.parseInt(eingabe);//TODO;
         
         System.out.println("FilmNo:" + filmNo);
+        
+        if(filmNo%2 == 0) { 
+        	System.out.println("Wir wünschen Ihnen viel Spass bei dem Film!");
+        }else {
+        	System.out.println("Lust auf ein Bier? https://www.werkenntdenbesten.de/kneipe/mainz Besuchen Sie doch mal eine davon ..... JETZT!!");
+        }
+        
 	}
-	
-	
-        
-        
-
+	   
 }
