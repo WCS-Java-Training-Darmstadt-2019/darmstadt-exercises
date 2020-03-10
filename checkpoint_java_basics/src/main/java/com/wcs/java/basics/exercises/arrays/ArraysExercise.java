@@ -41,6 +41,14 @@ public class ArraysExercise {
 		
 	}
 	
+	public static String[] createArray(String name, int size) {
+		
+	}
+	
+	public static ??? createGrid(int rows, int columns)  {
+		
+	}
+	
 	
 
 }
