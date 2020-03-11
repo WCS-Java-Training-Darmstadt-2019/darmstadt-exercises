@@ -1,7 +1,7 @@
 1.
 Implementiere die main Methode von ArraysExercise und beachte code Kommentare
 
-2.
+2. 
 Lege eine Funktion an zum Finden aller PRIMZAHLEN unterhalb einer Grenze
 
 Eine effiziente Methode, alle Primzahlen unterhalb einer vorgegebenen Grenze zu finden, ist das nach dem griechischen Mathematiker 

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class StarTrek {
 
 	public static void main(String[] args) throws IOException {
+<<<<<<< HEAD
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("Welchen Teil von Startrek möchten sie schauen? Bitte geben sie die Nr ein.");
@@ -19,6 +20,17 @@ public class StarTrek {
 			System.out.println("besser nicht anschauen");
 		}
 
+=======
+        BufferedReader reader = new BufferedReader(
+              new InputStreamReader(System.in));
+ 
+        System.out.println("Welchen Teil von Startrek möchten sie schauen? Bitte geben sie die Nr ein.");
+        
+        String eingabe = reader.readLine();
+        int filmNo = Integer.parseInt(eingabe);//TODO;
+        
+        System.out.println("FilmNo:" + filmNo);
+>>>>>>> master
 	}
 
 }
