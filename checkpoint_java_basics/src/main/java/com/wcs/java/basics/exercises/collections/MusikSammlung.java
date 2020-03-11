@@ -7,7 +7,7 @@ public class MusikSammlung extends MusikContainer{
 		if (this.musiksammlung.contains(song)==false) {
 			super.songHinzufuegen(song);
 		} else {
-			System.out.println("Der Song" + getName(song) + ist bereits in der Liste enthalten!");
+			System.out.println("Der Song \"" + song.getName() + "\"ist bereits in der Liste enthalten!");
 		}
 	}
 

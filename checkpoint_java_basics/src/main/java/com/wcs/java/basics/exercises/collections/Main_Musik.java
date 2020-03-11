@@ -16,9 +16,9 @@ public class Main_Musik {
 
 		for (int i = 0; i < songs.length; i++) {
 			musikSammlung.songHinzufuegen(songs[i]);
-			System.out.println("Der Song " + songs[i].getName() + " wurde zur Musiksammlung hinzugefügt.");
+			System.out.println("Der Song \"" + songs[i].getName() + "\" wurde zur Musiksammlung hinzugefügt.");
 			playList.songHinzufuegen(songs[i]);
-			System.out.println("Der Song " + songs[i].getName() + " wurde zur Playlist hinzugefügt.");
+			System.out.println("Der Song \"" + songs[i].getName() + "\" wurde zur Playlist hinzugefügt.");
 		}
 
 	}
