@@ -2,10 +2,10 @@ package com.wcs.java.basics.exercises.oop;
 
 public class Animal {
 
-	int legs = 4;
-	String name;
-	String sound;
-	boolean isAlive = true;
+	private int legs = 4;
+	private String name;
+	private String sound;
+	private boolean isAlive = true;
 
 	public Animal(int legs, String name, String sound, boolean isAlive) {
 		super();
