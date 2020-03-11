@@ -4,7 +4,7 @@ public class DoSomething {
 
 	public static void main(String[] args) {
 		
-		Cat grumpy = new Cat(4,"Grumpy", "Miau", true);
+		Cat grumpy = new Cat(4,"Grumpy", "Miau", true, true);
 		
 		System.out.println(grumpy.getSound());
 		grumpy.setSound("Schnurr");

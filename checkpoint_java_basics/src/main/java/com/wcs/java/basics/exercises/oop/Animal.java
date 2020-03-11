@@ -5,7 +5,7 @@ public class Animal {
 	private int legs = 4;
 	private String name;
 	private String sound;
-	private boolean isAlive = true;
+	boolean isAlive = true;
 
 	public Animal(int legs, String name, String sound, boolean isAlive) {
 		super();
