@@ -8,6 +8,7 @@ git checkout -b darmstadt_nachname_vorname
 Es kommen immer mal wieder Änderungen und neue Aufgaben dazu dann einfach diese Änderungen mergen, wenn man in seinem branch ist
 
 git pull
+
 git merge master
 
 # importieren in Spring Tool Suite
