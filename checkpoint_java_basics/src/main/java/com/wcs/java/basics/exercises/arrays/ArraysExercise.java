@@ -1,43 +1,39 @@
 package com.wcs.java.basics.exercises.arrays;
 
-
 /**
- * 
  * @author dbe
- *
  */
 public class ArraysExercise {
-	
-	
-	public static void main(String[] args) {
-		
-		// die methode createArray soll ein string array mit den angegeben werten anlegen
-		
-		string_array = createArray("David", 10);
-		
-		// iteriere über das array und gebe jeden Wert in der console aus.
-		
-		// erstelle eine methode die ein 2 dimensionales array (hier grid genannt) erstellt und jeden wert mit dem übergabe wert füllt.
-		
-		grid = createGrid(2,10,"x");
-		
-		// iteriere über jede zelle des grids und gebe spalte und zeile aus sowie den inhalt
-		// x:0,y=0,value=x
-		// x:1,y=0,value=x
-		// etc.
-		
-		// gebe es als einen string aus
-		// bsp = grid mit 10 spalten und 3 zeilen
-		// ---------------------
-		// |x|x|x|x|x|x|x|x|x|x|
-		// |x|x|x|x|x|x|x|x|x|x|
-		// |x|x|x|x|x|x|x|x|x|x|
-		// ---------------------
-		String gridAsString = gridAsString(grid):
-		System.out.println(gridAsString);
-		
-	}
-	
-	
 
+    // David
+    public static String[] createArray(String name, int size) {
+        String[] string_array = new String[size];
+        for (int i = 0; i < size; i++) {
+            string_array[i] = name;
+            System.out.print(string_array[i] + ", ");
+        }
+		System.out.println("\n");
+        return string_array;
+    }
+
+    // x, y Werte
+    public static char[][] grid(int x, int y, char v) {
+        char[][] gridArray = new char[x][y];
+        for (int r = 0; r < gridArray.length; r++) {
+            for (int s = 0; s < gridArray[r].length; s++) {
+                gridArray[r][s] = v;
+				System.out.println("x = " + r + ", y = " + s + ", value = " + v);
+            }
+        }
+        return gridArray;
+    }
+
+    // Grid
+
+
+    // Main Methode
+    public static void main(String[] args) {
+        createArray("David", 10);
+        grid(10, 2, 'x');
+    }
 }
