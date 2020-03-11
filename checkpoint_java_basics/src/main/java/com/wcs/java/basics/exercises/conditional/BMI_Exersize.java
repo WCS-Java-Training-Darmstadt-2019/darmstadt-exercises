@@ -28,15 +28,15 @@ public class BMI_Exersize {
 		if (bmi < 18.5) {
 			System.out.println("Ihr Body-Mass-Index beträgt " + bmi + ".");
 			System.out.println("Du hast Untergewicht.");
-			
+
 		} else if (bmi >= 18.5 && bmi < 25) {
 			System.out.println("Ihr Body-Mass-Index beträgt " + bmi + ".");
 			System.out.println("Du hast Normalgewicht.");
-			
+
 		} else if (bmi >= 25 && bmi < 30) {
 			System.out.println("Ihr Body-Mass-Index beträgt " + bmi + ".");
 			System.out.println("Du hast Übergewicht.");
-			
+
 		} else if (bmi > 30) {
 			System.out.println("Ihr Body-Mass-Index beträgt " + bmi + ".");
 			System.out.println("Du hast schweres Übergewicht.");
