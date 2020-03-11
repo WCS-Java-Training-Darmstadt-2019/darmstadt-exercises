@@ -1,11 +1,11 @@
 package com.wcs.java.basics.exercises.oop;
 
-public class Animal {
+public class Animal implements AnimalMethods {
 
 	private int legs = 4;
 	private String name;
 	private String sound;
-	boolean isAlive = true;
+	private boolean isAlive = true;
 
 	public Animal(int legs, String name, String sound, boolean isAlive) {
 		super();
@@ -47,8 +47,16 @@ public class Animal {
 		this.isAlive = isAlive;
 	}
 	
+	@Override
 	public void animalDies() {
 		this.isAlive=false;
+		
+	}
+	
+	@Override
+	public String makeNoise(String noise) {
+		this.setSound(noise);
+		return this.sound;
 	}
 
 }

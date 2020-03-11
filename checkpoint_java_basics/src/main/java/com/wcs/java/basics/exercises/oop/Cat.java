@@ -1,9 +1,8 @@
 package com.wcs.java.basics.exercises.oop;
 
-public class Cat extends Animal{
-	
+public class Cat extends Animal {
+
 	private boolean isLazy;
-	
 
 	public Cat(int legs, String name, String sound, boolean isAlive, boolean isLazy) {
 		super(legs, name, sound, isAlive);
@@ -17,7 +16,5 @@ public class Cat extends Animal{
 	public void setLazy(boolean isLazy) {
 		this.isLazy = isLazy;
 	}
-	
-	
 
 }
