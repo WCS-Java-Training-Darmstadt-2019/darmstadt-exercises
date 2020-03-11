@@ -46,13 +46,13 @@ public class Animal implements AnimalMethods {
 	public void setAlive(boolean isAlive) {
 		this.isAlive = isAlive;
 	}
-	
+
 	@Override
 	public void animalDies() {
-		this.isAlive=false;
-		
+		this.isAlive = false;
+
 	}
-	
+
 	@Override
 	public String makeNoise(String noise) {
 		this.setSound(noise);

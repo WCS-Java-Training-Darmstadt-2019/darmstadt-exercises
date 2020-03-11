@@ -1,7 +1,9 @@
 package com.wcs.java.basics.exercises.arrays;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.wcs.java.basics.exercises.collections.Song;
 
@@ -30,6 +32,11 @@ public class ArraysExercise {
 
 		System.out.println(createGrid(3, 10, "|x"));
 
+		// Ausgabe für die Primzahlen
+		for (int elem : Sieb()) {
+			System.out.println(elem);
+		}
+
 		// iteriere über jede zelle des grids und gebe spalte und zeile aus sowie den
 		// inhalt
 		// x:0,y=0,value=x
@@ -45,10 +52,6 @@ public class ArraysExercise {
 		// ---------------------
 		// String gridAsString = gridAsString(grid):
 		// System.out.println(gridAsString);
-
-		for (int elem : Sieb()) {
-			System.out.println(elem);
-		}
 
 	}
 
@@ -69,21 +72,35 @@ public class ArraysExercise {
 	}
 
 	public static int[] Sieb() {
-	int zahl = 2;
-	int grenze = 10;
-	
-	 ArrayList<Integer> numbers = new ArrayList<>();
-	
-	for (int i = 2; i < 9; i++) {
-		for (int j = 0; j<grenze;j++) {
-			zahl += i;
+		int zaehler;
+		int grenze = 1000;
+		int vergleich = grenze / 10;
+
+		if (grenze < 100) {
+			vergleich = 10;
 		}
-	}
-	
-		
-		int[] ergebnis = new int[zahlen.length];
+
+		Set<Integer> numbersWithoutPrimes = new HashSet<Integer>();
+		Set<Integer> allNumbers = new HashSet<Integer>();
+
+		for (int i = 2; i <= grenze; i++) {
+			allNumbers.add(i);
+		}
+
+		for (int i = 2; i <= vergleich; i++) {
+			zaehler = i;
+			while (zaehler + i <= grenze) {
+				zaehler += i;
+				numbersWithoutPrimes.add(zaehler);
+			}
+		}
+
+		Set<Integer> primes = new HashSet<Integer>(allNumbers);
+		primes.removeAll(numbersWithoutPrimes);
+
+		int[] ergebnis = new int[primes.size()];
 		int i = 0;
-		for (Integer number : zahlen) {
+		for (Integer number : primes) {
 			ergebnis[i] = number;
 			i++;
 		}
