@@ -9,20 +9,8 @@ public class Playlist extends Bibliothek {
 
 		//super().
 		getPlaylist().add(new Song(name, interpret, dauer));
-		playlist.add(new Song(name, interpret, dauer));
 
 	}
-
-//	public static String getSongsFromPlaylist() {
-//		int i = 1;
-//		String s = "";
-//		for (Song aSong : playlist) {
-//			s += "Song nr." + i + " in Ihrer Playlist: '" + aSong.getName() + "' von '" + aSong.getArtist() + "' mit "
-//					+ aSong.getDurationInSeconds() + " Sekunden Laufzeit\n";
-//			i++;
-//		}
-//		return s;
-//	}
 	
 	public static void deleteSongFromPlaylist() {
 		
