@@ -14,9 +14,12 @@ public class Main_Musik {
 				new Song("Kommisar", "Falco", 120),
 				new Song("Jeanne", "Heino", 120) };
 
+		
+		
+		
 		for (int i = 0; i < songs.length; i++) {
 			musikSammlung.songHinzufuegen(songs[i]);
-			System.out.println("Der Song \"" + songs[i].getName() + "\" wurde zur Musiksammlung hinzugefügt.");
+
 			playList.songHinzufuegen(songs[i]);
 			System.out.println("Der Song \"" + songs[i].getName() + "\" wurde zur Playlist hinzugefügt.");
 		}
