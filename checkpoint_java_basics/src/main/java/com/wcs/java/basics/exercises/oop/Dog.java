@@ -17,5 +17,9 @@ public class Dog extends Animal {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	@Override
+	public String gattung() {
+		return "Es ist ein Hund";
+	}
 
 }

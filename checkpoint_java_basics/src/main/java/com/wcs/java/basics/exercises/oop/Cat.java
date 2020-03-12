@@ -17,4 +17,9 @@ public class Cat extends Animal {
 		this.isLazy = isLazy;
 	}
 
+	@Override
+	public String gattung() {
+		return "Es ist eine Katze";
+	}
+	
 }

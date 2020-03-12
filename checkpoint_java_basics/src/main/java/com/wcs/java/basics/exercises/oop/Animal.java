@@ -54,9 +54,13 @@ public class Animal implements AnimalMethods {
 	}
 
 	@Override
+	public String gattung() {
+		return null;
+	}
+
+	@Override
 	public String makeNoise(String noise) {
-		this.setSound(noise);
-		return this.sound;
+		return noise;
 	}
 
 }
