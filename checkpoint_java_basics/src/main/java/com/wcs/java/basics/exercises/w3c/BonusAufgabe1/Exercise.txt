@@ -1,0 +1,80 @@
+Bonus Challenge: IBAN
+Die im neuen SEPA-Verfahren benutzten europaweit gültigen IBAN-Kontonummern haben
+einen vorgegebenen Aufbau: 
+- Ein Ländercode aus zwei Buchstaben (für Deutschland etwa DE),
+- eine zweistellige Prüfzahl, 
+- eine achtstellige Bankleitzahl 
+- und eine zehnstellige Kontonummer.
+
+Es werden nachfolgende Beispiele zu folgenden Basiswerten angegeben: 
+Ländercode=DE,
+Bankleitzahl=12345678, 
+Kontonummer=123456.
+
+Die Berechnung einer solchen IBAN-Nummer geschieht in mehreren Schritten (in dieser hier
+beschriebenen etwas vereinfachten Form nur auf deutsche Kontenangaben anwendbar):
+
+1. Zuerst wird der Ländercode normalisiert, so dass er nur aus Großbuchstaben besteht.
+Beispiel: aus ​ de​ würde ​ DE​ .
+
+2. Derzeit vergebene Kontonummern können auch weniger als 10 Ziffern enthalten. In
+einem weiteren Schritt normalisiert man eine Kontonummer, indem fehlende Ziffern
+durch führende Nullen ergänzt werden, so dass die Kontonummer genau 10-stellig ist.
+Beispiel: aus 123456 wird 0000123456.
+
+3. Dann wird eine BBAN erzeugt, die aus der Bankleitzahl gefolgt von der normalisierten
+Kontonummer gebildet wird. Diese ist also genau 18-stellig. Für die Beispielwerte gilt
+BBAN=123456780000123456.
+
+4. Für die beiden (Groß-)Buchstaben des Ländercodes wird getrennt voneinander folgende
+Umwandlung durchgeführt. 
+
+Der Großbuchstabe wird in einen Zahlencode umgewandelt,
+der der Position des Buchstabens im Alphabet entspricht (beginnend bei 1), und darauf
+9 addiert. Beispiel: aus A wird 9+1=10, aus D wird 9+4=13 und aus E wird 9+5=14.
+Diese erzeugte Zahl ist also auf jeden Fall zweistellig, zwischen 10 für A und 35 für Z.
+An die BBAN wird dann zuerst der Zahlencode des ersten Buchstabens und dann der
+Zahlencode des zweiten Buchstabens hinten angehängt sowie zwei weitere Nullen. Im
+Beispiel entsteht daraus insgesamt 123456780000123456131400.
+
+5. Danach wird die so erzeugte 24-stellige Ziffernfolge als Zahl aufgefasst und modulo 97
+genommen. Eine 24-stellige Dezimalzahl sprengt allerdings den Wertebereich von ​ int
+und sogar ​ long​ . Deshalb bedient man sich eines Tricks (ohne Herleitung/Begründung):
+man nimmt nur die ersten 9 Ziffern, fasst diese als 9-stellige Zahl auf (welcher Java-Typist dafür geeignet?) und berechnet dazu den modulo-97 Wert. Diesen (ein- oder
+zweistelligen) Modulo-Wert fügt man ​ vorne ​ an die verbliebene 15-stellige Zahl an, nimmt
+davon wiederum die ersten 9 Ziffern, bildet davon den Modulo-97 Wert, hängt diesen
+wiederum vorne an den verbliebenen Rest usw.. Dieses Verfahren bricht ab, wenn nur
+noch der Modulo-Wert aber keine restlichen Ziffern mehr vorhanden sind. Beispiel zu
+123456780000123456131400: 123456780 modulo 97 = 30, 300001234 modulo 97 = 22,
+225613140 modulo 97 = 64, 640 modulo 97 = 58. Also ist 123456780000123456131400
+modulo 97 = 58.
+
+6. Dann zieht man von der Konstanten 98 den Modulo-97-Wert ab. Ist die resultierende
+Zahl kleiner als 10, so fügt man eine führende Null hinzu, so dass man auf jeden Fall
+eine zweistellige Zahl hat. Diese Zahl ist die Prüfzahl. Im Beispiel: 98-58=40.
+
+7. Die IBAN-Nummer ist dann die normalisierte Länderkennung, gefolgt von den zwei
+Ziffern der Prüfzahl, gefolgt von der BBAN. Im Beispiel: DE40123456780000123456.
+Geben Sie zu den einzelnen Schritten oder zu sinnvoll zusammengefassten Teilschritten jeweils
+eine Methode an, zu der Sie sich auch eine sinnvolle Signatur überlegen. Überlegen Sie sich
+sehr genau, wo welcher Datentyp angebracht ist und mit welchen Operationen Sie arbeiten.
+Lassen Sie sich zu Testzwecken die Ergebnisse der Zwischenschritte ausgeben und überprüfen
+diese mit den Referenzwerten zum obigen Beispiel.
+
+Geben Sie zuletzt eine Methode
+public static String erzeugeIban(String laenderkennung, String blz, String nummer)
+an, die aus den gegebenen Einzelangaben eine korrekte IBAN-Kontonummer erzeugt.
+Geben Sie dann eine ​ main​ -Methode in einer Klasse ​ IbanBerechnen​ an, die 3 Argumente zur
+Laufzeit über die Tastatur einliest: eine Länderkennung aus genau zwei Buchstaben, eine
+Bankleitzahl aus genau acht Ziffern und eine maximal 10-stellige Kontonummer. Lesen Sie
+diese Eingabewerte jeweils als String ein mit ​ sc.next()​ für einen Scanner mit Namen ​ sc​ . Bilden
+Sie aus den Eingabewerten die IBAN-Nummer und geben nur diese aus, gefolgt von einem
+Zeilenende.
+
+Beispieleingabe:
+de 12345678 123456
+Ausgabe dazu:
+DE40123456780000123456
+
+Hinweis: Sie können zu eigenen Testdaten ihr IBAN-Ergebnis überprüfen über
+http://www.iban.de/iban-berechnen.html
