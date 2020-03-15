@@ -15,7 +15,7 @@ public class SolutionExercise113main {
 		SortedArr.concatAndSortArr(dictionary1, dictionary2);
 
 		for (int i = 0; i < dictionary1.length + dictionary2.length; i++) {
-			System.out.println(SortedArr.getArrtotalLength()[i]);
+			System.out.println(SortedArr.getArrtotalLength().[i]);
 		}
 	}
 }

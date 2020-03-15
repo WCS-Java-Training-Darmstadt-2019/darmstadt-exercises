@@ -7,9 +7,12 @@ public class IBANGernerator  {
 	public static void main(String[] args) throws IOException {
 		
 		ContactPoint contactPoint = new ContactPoint();
-		
-		contactPoint.eingaben();
 				
+		contactPoint.eingaben();
+		
+		contactPoint.iBANberechnen();
+
+		
 	}
 	
 }
