@@ -35,6 +35,12 @@ public class DoSomething {
 		System.out.println(animals.get(1) instanceof AnimalMethods);
 		System.out.println(animals.get(1) instanceof Dog);
 		System.out.println(animals.get(1) instanceof Cat);
+		
+		String zahl = "";
+		System.out.println(zahl+="1");
+		System.out.println(zahl+="1");
+		System.out.println(zahl+="1");
+		
 	
 	}
 	
