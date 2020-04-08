@@ -1,0 +1,40 @@
+Challenge: Datumserweiterung
+
+Schreiben Sie ein Java-Programm ​ DatumErweiterung​ , das zu einer Datumsangabe eine Zeit
+addiert und das resultierende Datum ausgibt.
+Die Eingabe geschieht dabei über die Tastatur zur Laufzeit und enthält in dieser Reihenfolge
+folgende Angaben (alles natürliche Zahlen):
+
+- eine Jahreszahl ​ j
+(1600 ≤ ​ j ​ ≤ 3000)
+
+- eine Monatszahl ​ m (1 ≤ ​ m ​ ≤ 12)
+eine Tageszahl ​ t
+(1 ≤ ​ t ​ ≤ 31)
+(je nach Monat bis zum zulässigen Maximalwert des Monats)
+- eine Stundenzahl ​ s (0 ≤ ​ s ​ ≤ 23)
+- eine Minutenzahl ​ m1 (0 ≤ ​ m ​ ≤ 59)
+
+- eine Minutenzahl ​ m2 ​ , die zu dem Datum addiert werden soll (0 ≤ ​ m2 ​ ≤ 40000).
+Auf das Datum, das mit den ersten 5 Werten spezifiert wird, soll man die letzte Angabe ​ m2
+addieren, also das Datum bestimmen, das ​ m2 ​ Minuten später ist.
+
+Ignorieren Sie Schaltjahre, der Februar hat also in jedem Jahr 28 Tage! Aufgrund der
+Beschränkung bei ​ m2 ​ kann es höchstens einen Monat Überlauf geben.
+
+Die Ausgabe soll nacheinander in einer Zeile und durch ein Leerzeichen getrennt die
+Resultatwerte für Jahr, Monat, Tag, Stunde und Minute ausgeben. Die Zeile wird durch ein
+Zeilenende abgeschlossen.
+
+Beispiel 1: Bei Eingabe von
+2018 10 7 16 30 30
+
+muss als Ausgabe erscheinen:
+2018 10 7 17 0
+
+weil 30 Minuten nach 16:30 am 7.10.2018 ist: 17:00 am 7.10.2018.
+Beispiel 2: Bei Eingabe von
+2018 12 31 23 59 2
+muss als Ausgabe erscheinen:
+2019 1 1 0 1
+weil 2 Minuten nach 23:59 am 31.12.2018 ist: 0:01 am 1.1.2019
